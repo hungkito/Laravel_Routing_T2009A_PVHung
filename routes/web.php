@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/user/dang-ki', [UserController::class, 'dangki']);
+Route::get('/user/login', [UserController::class, 'login']);
+Route::post('/user/dang-ki', [UserController::class, 'xulidangki']);
+Route::get('/user/getUserDetail', [UserController::class, 'getUserDetail']);
+Route::get('/user/dang-ki-khach-hang', [UserController::class, 'dangKiKhachHang']);
+Route::post('/user/dang-ki-khach-hang', [UserController::class, 'showInformation']);
+
 Route:: get('/admin/student/create', [\App\Http\Controllers\StudentCotroller::class,'create']);
 Route:: get('/admin/student/list', [\App\Http\Controllers\StudentCotroller::class,'getList']);
 Route:: get('/admin/student/detail', [\App\Http\Controllers\StudentCotroller::class,'getById']);
