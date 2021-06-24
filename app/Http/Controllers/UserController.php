@@ -47,7 +47,13 @@ class UserController
         $phone = $request->get('phone');
         $address = $request->get('address');
         $identityCard = $request->get('identityCard');
-        return sprintf('Successful registration of your information is: fullName %s, email %s, phone %s, address %s, identityCard %s',
-            $fullName, $email, $phone, $address, $identityCard);
+//        return sprintf('Successful registration of your information is: fullName %s, email %s, phone %s, address %s, identityCard %s',
+//            $fullName, $email, $phone, $address, $identityCard);
+        return view('user.detail_account')
+            ->with('fullName',$fullName)
+            ->with('email',$email)
+            ->with('phone',$phone)
+            ->with('address',$address)
+            ->with('idCard',$identityCard);
     }
 }
