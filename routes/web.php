@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,3 +38,7 @@ Route:: get('/admin/teacher/detail', [\App\Http\Controllers\TeacherController::c
 Route:: get('/admin/teacher/update', [\App\Http\Controllers\TeacherController::class,'update']);
 Route:: get('/admin/teacher/delete', [\App\Http\Controllers\TeacherController::class,'delete']);
 Route:: get('/admin/teacher/view', [\App\Http\Controllers\TeacherController::class,'view']);
+
+Route::get('/demo.page1', [LayoutController::class, 'page1']);
+Route::get('/demo.page2', [LayoutController::class, 'page2']);
+Route::get('/demo.page3', [LayoutController::class, 'page3']);
